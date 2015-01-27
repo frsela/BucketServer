@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bucket Server Client</title>
+    <script defer src="https://cdn.socket.io/socket.io-1.3.2.js"></script>
+    <script defer src="socketio.js"></script>
+  </head>
+  <body>
+    <h1>Bucket Server Client</h1>
+
+    <div id="control">
+      <button id="connect">Connect to server</button>
+      <button id="disconnect">Disconnect from server</button>
+    </div>
+
+    <div id="status" class="disconnected">
+      <div>Connected: <span id="serverConnected">False</span></div>
+      <div>Server Time: <span id="serverTime"></span></div>
+    </div>
+
+    <div id="data">
+      <div id="metadata">
+        <ul>
+          <li>Timestamp: <span id="timestamp"></span></li>
+          <li>Server time: <span id="time"></span></li>
+          <li>Origin: <span id="origin"></span></li>
+          <li>Path: <span id="path"></span></li>
+          <li>Method: <span id="method"></span></li>
+        </ul>
+      </div>
+      <div id="headers"></div>
+      <div id="payload"></div>
+    </div>
+  </body>
+</html>

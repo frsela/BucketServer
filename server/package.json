@@ -1,0 +1,33 @@
+{
+  "name": "ServerBucketViewer",
+  "version": "0.1.0",
+  "author": "Fernando Rodríguez Sela",
+  "description": "Viewer for server received data",
+  "contributors": [
+    "Fernando Rodriguez Sela <fernando.rodriguezsela@telefonica.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "http://tid.es"
+  },
+  "keywords": [
+    "json",
+    "rest",
+    "socket.io"
+  ],
+  "dependencies": {
+    "socket.io": "1.3.*"
+  },
+  "engines": {
+    "node": "0.10.*"
+  },
+  "license": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "devDependencies": {}
+}
