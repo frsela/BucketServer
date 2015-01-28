@@ -2,13 +2,7 @@ var connectBtn = document.getElementById('connect'),
     disconnectBtn = document.getElementById('disconnect'),
     serverConnected = document.getElementById('serverConnected'),
     serverTime = document.getElementById('serverTime'),
-    timestamp = document.getElementById('timestamp'),
-    time = document.getElementById('time'),
-    origin = document.getElementById('origin'),
-    headers = document.getElementById('headers'),
-    path = document.getElementById('path'),
-    method = document.getElementById('method'),
-    payload = document.getElementById('payload');
+    receivedTraces = document.getElementById('receivedTraces');
 
 connect.onclick = function() {
   sio.connect();
@@ -43,6 +37,15 @@ window.sio = {
     this.socket.on('dataReceived', (data) => {
       console.log('Data received: ' + JSON.stringify(data));
 
+      var templateContent = document.getElementById('dataContent').content;
+      var timestamp = templateContent.getElementById('timestamp'),
+          time = templateContent.getElementById('time'),
+          origin = templateContent.getElementById('origin'),
+          headers = templateContent.getElementById('headers'),
+          path = templateContent.getElementById('path'),
+          method = templateContent.getElementById('method'),
+          payload = templateContent.getElementById('payload');
+
       timestamp.textContent = data.timestamp;
       time.textContent = data.time;
       origin.textContent = data.origin;
@@ -57,6 +60,9 @@ window.sio = {
       });
       auxHeaders += '</dl>';
       headers.innerHTML = auxHeaders;
+
+      var clone = document.importNode(templateContent, true);
+      receivedTraces.appendChild(clone);
     });
 
     this.socket.on('otherTryingToConnect', () => {
