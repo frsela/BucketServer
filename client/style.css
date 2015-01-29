@@ -1,0 +1,11 @@
+#receivedTraces {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+article {
+    flex: 1;
+    border: solid 1px black;
+    min-width: 0;
+    min-height: auto;
+}
