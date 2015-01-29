@@ -20,7 +20,7 @@ window.sio = {
     console.log('Connecting...');
     serverConnected.textContent = 'Connecting...';
     connect.style.display = 'none';
-    this.socket = io.connect('http://localhost:8888');
+    this.socket = io.connect(window.location.origin);
 
     this.socket.on('connect', () => {
       console.log('Connected !');
